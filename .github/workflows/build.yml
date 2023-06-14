@@ -27,7 +27,9 @@ jobs:
         run: dotnet build
 
       - name: Run program
-        run: dotnet run --project .\DateFileOutput\
+        run: |
+          echo ls
+          dotnet run --project .\DateFileOutput\
 
       - name: Commit and Push Changes
         uses: actions/github-script@v4
