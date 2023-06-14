@@ -11,7 +11,7 @@ string formattedDateTime = currentDateTime.ToString("yyyy-MM-dd HH:mm:ss");
 Console.WriteLine(Path.GetFullPath(OutputPath));
 Console.WriteLine($"current time is {formattedDateTime}");
 
-using (StreamWriter writer = new StreamWriter(OutputPath))
+using (StreamWriter writer = File.AppendText(OutputPath))
 {
     writer.WriteLine(formattedDateTime);
 }
