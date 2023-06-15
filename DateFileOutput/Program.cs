@@ -3,6 +3,9 @@ using System;
 using System.IO;
 
 string? DirectoryPath = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
+
+if (DirectoryPath == null) throw new Exception($"Directory {DirectoryPath} is null cannot continue");
+
 string OutputPath = Path.Combine(DirectoryPath, "..", "..", "..", "txt_output", "output.txt");
 
 DateTime currentDateTime = DateTime.Now;
